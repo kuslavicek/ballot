@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ballot"
+version = "0.1.0"
+description = "Balanced k-means clustering with optimal transport (BalLOT)"
+readme = "README.md"
+authors = [
+  { name = "kuslavicek", email = "kuslavicek@gmail.com" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "numpy",
+    "scipy",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/kuslavicek/ballot"
+"Bug Tracker" = "https://github.com/kuslavicek/ballot/issues"
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+testpaths = ["tests"]
