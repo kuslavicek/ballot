@@ -30,11 +30,17 @@ pip install ballot
 
 ```python
 import numpy as np
-from ballot.core import solve_entropic_kantorovich
+from ballot.estimator import BalancedKMeans
 
-# Example usage (API subject to change in v0.1)
-# Create random data and centroids...
-# Run balanced clustering...
+np.random.seed(42)
+X = np.random.rand(100, 2)
+
+bkm = BalancedKMeans(n_clusters=2)
+
+labels = bkm.fit_predict(X)
+
+print(f"Cluster 0 count: {np.sum(labels == 0)}")
+print(f"Cluster 1 count: {np.sum(labels == 1)}")
 ```
 
 ## Development
@@ -42,7 +48,7 @@ from ballot.core import solve_entropic_kantorovich
 To install in editable mode for development:
 
 ```bash
-git clone https://github.com/username/ballot.git
+git clone https://github.com/kuslavicek/ballot.git
 cd ballot
 pip install -e .
 ```
